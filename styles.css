@@ -401,3 +401,15 @@ body::before{
   .btn, .card, .chip{ transition: none !important; }
 }
 
+/* Lightweight reveal (GPU-friendly) */
+.reveal{
+  opacity: 0;
+  transform: translate3d(0, 8px, 0);
+  will-change: opacity, transform;
+}
+.reveal.reveal-in{
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity .35s ease, transform .35s ease;
+}
+
