@@ -332,4 +332,72 @@ pre{
   .grid.two{ grid-template-columns: 1fr; }
   .nav-links{ gap: 6px; }
 }
+/* ===== polish pack ===== */
+
+/* Slightly richer background grain */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(1000px 600px at 15% 10%, rgba(255,255,255,.45), transparent 60%),
+    radial-gradient(900px 520px at 85% 20%, rgba(255,255,255,.35), transparent 55%),
+    radial-gradient(800px 500px at 60% 90%, rgba(255,255,255,.25), transparent 55%);
+  mix-blend-mode: soft-light;
+  opacity: .9;
+}
+
+/* Better typography rhythm */
+.hero-text h1{ letter-spacing: -0.6px; }
+.subtitle{ font-size: 15.5px; }
+
+/* Buttons: more “product” feel */
+.btn{
+  transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+.btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(31,31,31,.08);
+}
+.btn:active{
+  transform: translateY(0px);
+  box-shadow: none;
+}
+
+/* Cards: micro interaction + clearer separation */
+.card{
+  transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+}
+.card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 42px rgba(31,31,31,.10);
+  border-color: rgba(31,31,31,.16);
+}
+
+/* Grid spacing a bit roomier */
+.section{ padding: 34px 0; }
+.grid{ gap: 16px; }
+
+/* Chips feel more clickable */
+.chip{
+  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+}
+.chip:hover{
+  transform: translateY(-1px);
+  border-color: rgba(31,31,31,.18);
+  background: rgba(255,255,255,.75);
+}
+
+/* Footer toast visibility */
+#toast{
+  min-height: 18px;
+  transition: opacity .18s ease;
+  opacity: 0;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .btn, .card, .chip{ transition: none !important; }
+}
 
