@@ -130,4 +130,23 @@ copyDraftBtn?.addEventListener("click", async () => {
   if (ok) showToast("Draft copied ✅");
   else showToast("Copy failed (browser restriction)");
 });
+// ===== subtle reveal on scroll =====
+const revealTargets = document.querySelectorAll(".hero-card, .section, .card.soft, .card");
+
+revealTargets.forEach(el => {
+  el.style.opacity = "0";
+  el.style.transform = "translateY(6px)";
+});
+
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.style.transition = "opacity .35s ease, transform .35s ease";
+    e.target.style.opacity = "1";
+    e.target.style.transform = "translateY(0)";
+    io.unobserve(e.target);
+  });
+}, { threshold: 0.08 });
+
+revealTargets.forEach(el => io.observe(el));
 
