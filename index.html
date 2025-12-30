@@ -1,1 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Demo | Landing Page</title>
+  <meta name="description" content="A client-style landing page demo (HTML/CSS/JS)." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top" id="top">Client Demo</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-card">
+        <div class="hero-left">
+          <div class="avatar-wrap">
+            <!-- Optional: replace with your own image -->
+            <img class="avatar" src="assets/avatar.jpg" alt="Profile photo (optional)"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('avatar-fallback')" />
+            <div class="avatar-fallback-block" aria-hidden="true"></div>
+          </div>
+
+          <div class="hero-text">
+            <h1>Hello, I'm <span class="grad">Haoyu</span></h1>
+            <p class="subtitle">
+              A delivery-focused student developer who builds small web projects that are clean, fast, and deploy-ready.
+            </p>
+
+            <div class="cta-row">
+              <a class="btn primary" href="#contact">Start a project</a>
+              <a class="btn" href="#work">View work</a>
+              <button class="btn ghost" id="copyEmailBtn" type="button" aria-live="polite">
+                Copy email
+              </button>
+            </div>
+
+            <p class="tiny">
+              Delivery focus: landing pages · small websites · simple web tools (1–2 weeks)
+            </p>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="stat">
+            <div class="stat-num">1–2 weeks</div>
+            <div class="stat-label">Typical delivery time</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">HTML / CSS / JS</div>
+            <div class="stat-label">Current tech stack</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">Deploy-ready</div>
+            <div class="stat-label">Live demo available</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section id="work" class="section">
+      <div class="section-head">
+        <h2>Selected Work</h2>
+        <p class="muted">Example projects simulating real client work. Filter by category.</p>
+      </div>
+
+      <div class="chip-row" role="tablist" aria-label="Work filters">
+        <button class="chip active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="chip" data-filter="landing" role="tab" aria-selected="false">Landing</button>
+        <button class="chip" data-filter="portfolio" role="tab" aria-selected="false">Portfolio</button>
+        <button class="chip" data-filter="tool" role="tab" aria-selected="false">Tool</button>
+      </div>
+
+      <div class="grid" id="workGrid">
+        <article class="card" data-tags="landing">
+          <div class="card-img">
+            <img src="assets/p1.jpg" alt="Project preview 1" onerror="this.remove()" />
+            <div class="img-fallback" aria-hidden="true"></div>
+          </div>
+          <div class="card-body">
+            <h3>Product Landing Page</h3>
+            <p class="muted">A responsive landing page suitable for product launches or campaigns.</p>
+            <div class="pill-row">
+              <span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JS</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="portfolio">
+          <div class="card-img">
+            <img src="assets/p2.jpg" alt="Project preview 2" onerror="this.remove()" />
+            <div class="img-fallback" aria-hidden="true"></div>
+          </div>
+          <div class="card-body">
+            <h3>Creator Portfolio</h3>
+            <p class="muted">A clean portfolio layout with work, about, and contact sections.</p>
+            <div class="pill-row">
+              <span class="pill">Grid</span><span class="pill">Responsive</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="tool">
+          <div class="card-img">
+            <img src="assets/p3.jpg" alt="Project preview 3" onerror="this.remove()" />
+            <div class="img-fallback" aria-hidden="true"></div>
+          </div>
+          <div class="card-body">
+            <h3>Mini Web Tool</h3>
+            <p class="muted">A lightweight utility page with input, output, and copy functionality.</p>
+            <div class="pill-row">
+              <span class="pill">DOM</span><span class="pill">UX</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="landing">
+          <div class="card-img">
+            <img src="assets/p4.jpg" alt="Project preview 4" onerror="this.remove()" />
+            <div class="img-fallback" aria-hidden="true"></div>
+          </div>
+          <div class="card-body">
+            <h3>Event Page</h3>
+            <p class="muted">Event-focused page including schedule, location, and a registration CTA.</p>
+            <div class="pill-row">
+              <span class="pill">SEO</span><span class="pill">Fast</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="portfolio">
+          <div class="card-img">
+            <img src="assets/p5.jpg" alt="Project preview 5" onerror="this.remove()" />
+            <div class="img-fallback" aria-hidden="true"></div>
+          </div>
+          <div class="card-body">
+            <h3>Photography Grid</h3>
+            <p class="muted">A gallery-style layout with consistent cards and filtering.</p>
+            <div class="pill-row">
+              <span class="pill">Gallery</span><span class="pill">UI</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="tool">
+          <div class="card-img">
+            <img src="assets/p6.jpg" alt="Project preview 6" onerror="this.remove()" />
+            <div class="img-fallback" aria-hidden="true"></div>
+          </div>
+          <div class="card-body">
+            <h3>Text Formatter</h3>
+            <p class="muted">A simple text processing tool designed for quick everyday tasks.</p>
+            <div class="pill-row">
+              <span class="pill">Utility</span><span class="pill">Copy</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section">
+      <div class="section-head">
+        <h2>Services</h2>
+        <p class="muted">Clear scope, fast delivery, and practical results.</p>
+      </div>
+
+      <div class="grid two">
+        <div class="card soft">
+          <div class="card-body">
+            <h3>Landing Pages</h3>
+            <ul class="list">
+              <li>Product, event, or personal landing pages</li>
+              <li>Mobile-friendly and basic SEO</li>
+              <li>Deployable on GitHub Pages or Vercel</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card soft">
+          <div class="card-body">
+            <h3>Small Websites & Portfolios</h3>
+            <ul class="list">
+              <li>Work, about, and contact sections</li>
+              <li>Light interactions and animations</li>
+              <li>Easy to extend with APIs or backend later</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="section-head">
+        <h2>About</h2>
+        <p class="muted">A short intro focused on how I work and what I deliver.</p>
+      </div>
+
+      <div class="card soft">
+        <div class="card-body">
+          <p>
+            I'm a first-year Computer Science student with experience in Java, C++, Python, and frontend development.
+            I work best on short, clearly defined projects and focus on clean, usable results rather than overengineering.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Clean Code</span>
+            <span class="pill">Responsive UI</span>
+            <span class="pill">Git</span>
+            <span class="pill">Deployment</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="section-head">
+        <h2>Contact</h2>
+        <p class="muted">The fastest way to reach me for a project inquiry.</p>
+      </div>
+
+      <div class="grid two">
+        <div class="card soft">
+          <div class="card-body">
+            <h3>Quick links</h3>
+
+            <div class="contact-row">
+              <span class="label">Email</span>
+              <span class="mono" id="emailText">hehehong2006@163.com</span>
+            </div>
+
+            <div class="contact-row">
+              <span class="label">GitHub</span>
+              <a class="mono" href="https://github.com/hhy1337" target="_blank" rel="noreferrer">github.com/hhy1337</a>
+            </div>
+
+            <div class="contact-row">
+              <span class="label">LinkedIn</span>
+              <a class="mono" href="https://www.linkedin.com/in/haoyuhong2006/" target="_blank" rel="noreferrer">
+                linkedin.com/in/haoyuhong2006
+              </a>
+            </div>
+
+            <div class="cta-row">
+              <a class="btn primary" href="mailto:hehehong2006@163.com?subject=Project%20Inquiry">Send email</a>
+              <button class="btn" id="copyEmailBtn2" type="button">Copy email</button>
+            </div>
+
+            <p class="tiny" id="toast" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <div class="card soft">
+          <div class="card-body">
+            <h3>Quick project brief (local demo)</h3>
+
+            <form id="demoForm" class="form">
+              <label>
+                Your name
+                <input name="name" type="text" placeholder="Alex" required />
+              </label>
+
+              <label>
+                Project type
+                <select name="type" required>
+                  <option value="">Select one</option>
+                  <option>Landing Page</option>
+                  <option>Portfolio Website</option>
+                  <option>Small Web Tool</option>
+                  <option>Other</option>
+                </select>
+              </label>
+
+              <label>
+                Brief description
+                <textarea name="desc" rows="4" placeholder="I need a website that..." required></textarea>
+              </label>
+
+              <button class="btn primary" type="submit">Generate email draft</button>
+
+              <p class="tiny muted">
+                Submitting does not send any network requests. It only generates a copyable email draft.
+              </p>
+            </form>
+
+            <div class="output">
+              <div class="output-head">
+                <strong>Email draft</strong>
+                <button class="btn ghost" id="copyDraftBtn" type="button" disabled>Copy draft</button>
+              </div>
+              <pre class="mono" id="draftBox">(Generated after submitting the form)</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>© <span id="year"></span> Client Demo • Built with HTML, CSS, and JavaScript</span>
+      <button class="btn ghost" id="toTopBtn" type="button" aria-label="Back to top">↑</button>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
