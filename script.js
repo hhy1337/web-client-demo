@@ -130,23 +130,20 @@ copyDraftBtn?.addEventListener("click", async () => {
   if (ok) showToast("Draft copied ✅");
   else showToast("Copy failed (browser restriction)");
 });
-// ===== subtle reveal on scroll =====
-const revealTargets = document.querySelectorAll(".hero-card, .section, .card.soft, .card");
+// ===== reveal on scroll =====
+const revealTargets = document.querySelectorAll(".hero-card, .section");
 
-revealTargets.forEach(el => {
-  el.style.opacity = "0";
-  el.style.transform = "translateY(6px)";
-});
+revealTargets.forEach(el => el.classList.add("reveal"));
 
 const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (!e.isIntersecting) return;
-    e.target.style.transition = "opacity .35s ease, transform .35s ease";
-    e.target.style.opacity = "1";
-    e.target.style.transform = "translateY(0)";
+  for (const e of entries) {
+    if (!e.isIntersecting) continue;
+    e.target.classList.add("reveal-in");
     io.unobserve(e.target);
-  });
-}, { threshold: 0.08 });
+  }
+}, {
+  threshold: 0.12,
+  rootMargin: "80px 0px"
+});
 
 revealTargets.forEach(el => io.observe(el));
-
